@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { aiTrends } from "../data/aiData";
 
@@ -49,6 +50,7 @@ const futureTopics = [
 ];
 
 export default function TrendsSection() {
+  const navigate = useNavigate();
   return (
     <section id="trends" className="py-20 bg-slate-950/60 relative overflow-hidden">
       {/* Background Effects */}
@@ -84,12 +86,13 @@ export default function TrendsSection() {
           {aiTrends.map((trend, i) => (
             <motion.div
               key={trend.id}
+              onClick={() => navigate(`/trends/${trend.id}`)}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               whileHover={{ y: -6 }}
-              className="group relative bg-slate-900/60 border border-white/[0.06] hover:border-orange-500/20 rounded-2xl p-6 transition-all duration-300 hover:bg-slate-900/80 overflow-hidden"
+              className="group relative bg-slate-900/60 border border-white/[0.06] hover:border-orange-500/20 rounded-2xl p-6 transition-all duration-300 hover:bg-slate-900/80 overflow-hidden cursor-pointer"
             >
               {/* Background gradient on hover */}
               <div className={`absolute inset-0 bg-gradient-to-br ${trend.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />

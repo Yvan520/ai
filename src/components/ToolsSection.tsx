@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { aiTools, toolCategories, type AITool } from "../data/aiData";
 
@@ -25,13 +26,12 @@ const categoryIcons: Record<string, string> = {
 };
 
 function ToolCard({ tool, index }: { tool: AITool; index: number }) {
+  const navigate = useNavigate();
   const gradientClass = categoryGradients[tool.category] || "from-slate-700/20 to-slate-800/10 border-slate-600/20";
 
   return (
-    <motion.a
-      href={tool.url}
-      target="_blank"
-      rel="noopener noreferrer"
+    <motion.div
+      onClick={() => navigate(`/tools/${tool.id}`)}
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.9 }}
@@ -86,10 +86,10 @@ function ToolCard({ tool, index }: { tool: AITool; index: number }) {
       {/* Arrow */}
       <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
         <svg className="w-4 h-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </div>
-    </motion.a>
+    </motion.div>
   );
 }
 
