@@ -1,13 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { githubProjects, githubCategories, type GitHubProject } from "../data/aiData";
 
 function ProjectCard({ project, index }: { project: GitHubProject; index: number }) {
+  const navigate = useNavigate();
   return (
-    <motion.a
-      href={project.url}
-      target="_blank"
-      rel="noopener noreferrer"
+    <motion.div
+      onClick={() => navigate(`/github/${project.id}`)}
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.95 }}
@@ -83,7 +83,7 @@ function ProjectCard({ project, index }: { project: GitHubProject; index: number
           {project.trend} /周
         </div>
       </div>
-    </motion.a>
+    </motion.div>
   );
 }
 
@@ -152,13 +152,11 @@ export default function GitHubSection() {
           ].map((item, i) => {
             const proj = [...githubProjects].sort((a, b) => b.starsRaw - a.starsRaw)[i];
             return (
-              <motion.a
+              <motion.div
                 key={i}
-                href={proj.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={() => navigate(`/github/${proj.id}`)}
                 whileHover={{ y: -4 }}
-                className={`relative bg-gradient-to-br ${item.color} border ${item.border} rounded-2xl p-4 transition-all duration-300 hover:shadow-lg`}
+                className={`relative bg-gradient-to-br ${item.color} border ${item.border} rounded-2xl p-4 transition-all duration-300 hover:shadow-lg cursor-pointer`}
               >
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-xl">{item.icon}</span>
@@ -172,7 +170,7 @@ export default function GitHubSection() {
                   </div>
                   <div className="text-xs text-slate-400">{proj.language}</div>
                 </div>
-              </motion.a>
+              </motion.div>
             );
           })}
         </motion.div>
@@ -215,7 +213,7 @@ export default function GitHubSection() {
           viewport={{ once: true }}
           className="text-center text-slate-600 text-sm mt-10"
         >
-          数据每日自动同步 · 星数来源于 GitHub 官方API · 点击项目卡片直接跳转 GitHub
+          数据每日自动同步 · 星数来源于 GitHub 官方API · 点击卡片查看项目详情
         </motion.p>
       </div>
     </section>
