@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
 
 const floatingItems = [
   { text: "GPT-5", x: "10%", y: "20%", delay: 0 },
@@ -18,7 +17,10 @@ const stats = [
 ];
 
 export default function Hero() {
-  const navigate = useNavigate();
+  const scrollToSection = (id: string) => {
+    const el = document.querySelector(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <section
@@ -134,7 +136,7 @@ export default function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
         >
           <button
-            onClick={() => navigate("/news")}
+            onClick={() => scrollToSection("#news")}
             className="group flex items-center gap-2 bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-500 hover:to-cyan-500 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg shadow-violet-600/30 hover:shadow-violet-500/50 hover:-translate-y-0.5"
           >
             <span>浏览最新资讯</span>
@@ -143,7 +145,7 @@ export default function Hero() {
             </svg>
           </button>
           <button
-            onClick={() => navigate("/github")}
+            onClick={() => scrollToSection("#github")}
             className="flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300"
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">

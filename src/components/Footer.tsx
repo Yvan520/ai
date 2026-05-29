@@ -1,29 +1,27 @@
-import { useNavigate } from "react-router-dom";
-
 const links = {
   "资讯": [
-    { label: "AI新闻", path: "/news" },
-    { label: "模型动态", path: "/news" },
-    { label: "AI政策", path: "/news" },
-    { label: "科研突破", path: "/news" },
+    { label: "AI新闻", href: "#news" },
+    { label: "模型动态", href: "#news" },
+    { label: "AI政策", href: "#news" },
+    { label: "科研突破", href: "#news" },
   ],
   "项目": [
-    { label: "GitHub热榜", path: "/github" },
-    { label: "本周新星", path: "/github" },
-    { label: "开源模型", path: "/github" },
-    { label: "AI框架", path: "/github" },
+    { label: "GitHub热榜", href: "#github" },
+    { label: "本周新星", href: "#github" },
+    { label: "开源模型", href: "#github" },
+    { label: "AI框架", href: "#github" },
   ],
   "工具": [
-    { label: "对话AI", path: "/tools" },
-    { label: "AI编程", path: "/tools" },
-    { label: "图像生成", path: "/tools" },
-    { label: "视频生成", path: "/tools" },
+    { label: "对话AI", href: "#tools" },
+    { label: "AI编程", href: "#tools" },
+    { label: "图像生成", href: "#tools" },
+    { label: "视频生成", href: "#tools" },
   ],
   "关于": [
-    { label: "网站介绍", path: "/" },
-    { label: "趋势洞察", path: "/trends" },
-    { label: "订阅简报", path: "/" },
-    { label: "提交工具", path: "/tools" },
+    { label: "网站介绍", href: "#home" },
+    { label: "趋势洞察", href: "#trends" },
+    { label: "订阅简报", href: "#newsletter" },
+    { label: "提交工具", href: "#tools" },
   ],
 };
 
@@ -34,7 +32,12 @@ const socialLinks = [
 ];
 
 export default function Footer() {
-  const navigate = useNavigate();
+  const handleNavClick = (href: string) => {
+    if (href.startsWith("#")) {
+      const el = document.querySelector(href);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <footer className="bg-slate-950 border-t border-white/[0.06]">
@@ -76,7 +79,7 @@ export default function Footer() {
                 {items.map((item) => (
                   <li key={item.label}>
                     <button
-                      onClick={() => { navigate(item.path); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                      onClick={() => handleNavClick(item.href)}
                       className="text-slate-400 hover:text-violet-300 text-sm transition-colors duration-200 text-left"
                     >
                       {item.label}

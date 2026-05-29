@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { newsData, categories, type NewsItem } from "../data/aiData";
 
@@ -15,10 +14,11 @@ const categoryColors: Record<string, string> = {
 };
 
 function NewsCard({ item, index }: { item: NewsItem; index: number }) {
-  const navigate = useNavigate();
   return (
-    <motion.div
-      onClick={() => navigate(`/news/${item.id}`)}
+    <motion.a
+      href={item.sourceUrl}
+      target="_blank"
+      rel="noopener noreferrer"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20, scale: 0.95 }}
@@ -70,15 +70,21 @@ function NewsCard({ item, index }: { item: NewsItem; index: number }) {
         </div>
         <div className="flex items-center gap-3">
           <span className="text-xs text-slate-500">📖 {item.readTime}</span>
-          <span className="text-xs text-violet-400 flex items-center gap-1">
-            查看详情
+          <a
+            href={item.sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-violet-400 hover:text-violet-300 flex items-center gap-1 transition-colors"
+            onClick={(e) => e.stopPropagation()}
+          >
+            阅读原文
             <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
             </svg>
-          </span>
+          </a>
         </div>
       </div>
-    </motion.div>
+    </motion.a>
   );
 }
 
