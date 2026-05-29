@@ -1,18 +1,21 @@
 import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "首页", href: "#home" },
-  { label: "AI新闻", href: "#news" },
-  { label: "GitHub热榜", href: "#github" },
-  { label: "AI工具", href: "#tools" },
-  { label: "趋势洞察", href: "#trends" },
+  { label: "首页", path: "/" },
+  { label: "AI新闻", path: "/news" },
+  { label: "GitHub热榜", path: "/github" },
+  { label: "AI工具", path: "/tools" },
+  { label: "趋势洞察", path: "/trends" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [active, setActive] = useState("首页");
+  const location = useLocation();
+  const navigate = useNavigate();
+  const active = navLinks.find((l) => l.path === location.pathname)?.label || "首页";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -20,11 +23,10 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (label: string, href: string) => {
-    setActive(label);
+  const handleNavClick = (label: string, path: string) => {
     setMobileOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    navigate(path);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -60,8 +62,8 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <button
                 key={link.label}
-                onClick={() => handleNavClick(link.label, link.href)}
-                className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                  onClick={() => handleNavClick(link.label, link.path)}
+                  className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   active === link.label
                     ? "text-white"
                     : "text-slate-400 hover:text-white"
@@ -125,7 +127,7 @@ export default function Navbar() {
               {navLinks.map((link) => (
                 <button
                   key={link.label}
-                  onClick={() => handleNavClick(link.label, link.href)}
+                  onClick={() => handleNavClick(link.label, link.path)}
                   className="block w-full text-left px-4 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-all text-sm"
                 >
                   {link.label}

@@ -1,27 +1,23 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import NewsTicker from "./components/NewsTicker";
-import StatsBar from "./components/StatsBar";
-import NewsSection from "./components/NewsSection";
-import GitHubSection from "./components/GitHubSection";
-import ToolsSection from "./components/ToolsSection";
-import TrendsSection from "./components/TrendsSection";
-import NewsletterSection from "./components/NewsletterSection";
-import Footer from "./components/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./Layout";
+import HomePage from "./pages/HomePage";
+import NewsPage from "./pages/NewsPage";
+import GitHubPage from "./pages/GitHubPage";
+import ToolsPage from "./pages/ToolsPage";
+import TrendsPage from "./pages/TrendsPage";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-white font-['Inter',sans-serif]">
-      <Navbar />
-      <Hero />
-      <NewsTicker />
-      <StatsBar />
-      <NewsSection />
-      <GitHubSection />
-      <ToolsSection />
-      <TrendsSection />
-      <NewsletterSection />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/news" element={<NewsPage />} />
+          <Route path="/github" element={<GitHubPage />} />
+          <Route path="/tools" element={<ToolsPage />} />
+          <Route path="/trends" element={<TrendsPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
