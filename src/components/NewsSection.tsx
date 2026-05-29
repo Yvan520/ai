@@ -15,13 +15,16 @@ const categoryColors: Record<string, string> = {
 
 function NewsCard({ item, index }: { item: NewsItem; index: number }) {
   return (
-    <motion.div
+    <motion.a
+      href={item.sourceUrl}
+      target="_blank"
+      rel="noopener noreferrer"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20, scale: 0.95 }}
       transition={{ duration: 0.4, delay: index * 0.05 }}
       whileHover={{ y: -4 }}
-      className="group relative bg-slate-900/60 backdrop-blur-sm border border-white/[0.06] hover:border-violet-500/30 rounded-2xl p-5 cursor-pointer transition-all duration-300 hover:bg-slate-900/80 hover:shadow-xl hover:shadow-violet-500/5"
+      className="group relative block bg-slate-900/60 backdrop-blur-sm border border-white/[0.06] hover:border-violet-500/30 rounded-2xl p-5 cursor-pointer transition-all duration-300 hover:bg-slate-900/80 hover:shadow-xl hover:shadow-violet-500/5"
     >
       {/* Hot Badge */}
       {item.hot && (
@@ -81,7 +84,7 @@ function NewsCard({ item, index }: { item: NewsItem; index: number }) {
           </a>
         </div>
       </div>
-    </motion.div>
+    </motion.a>
   );
 }
 
