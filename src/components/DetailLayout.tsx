@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -12,6 +13,10 @@ interface DetailLayoutProps {
 
 export default function DetailLayout({ children, title, backTo, backLabel, externalUrl, externalLabel }: DetailLayoutProps) {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="min-h-screen pt-24 pb-16 bg-slate-950">
