@@ -5,22 +5,39 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SITE = "https://ai.gamewayz.com";
+const DATA_FILE = path.resolve(__dirname, "../src/data/aiData.ts");
 
-const newsIds = Array.from({ length: 12 }, (_, i) => String(i + 1));
-const githubIds = Array.from({ length: 12 }, (_, i) => String(i + 1));
-const toolIds = Array.from({ length: 12 }, (_, i) => String(i + 1));
-const trendIds = Array.from({ length: 6 }, (_, i) => String(i + 1));
+function extractIds(exportName) {
+  const content = fs.readFileSync(DATA_FILE, "utf-8");
+  const match = content.match(new RegExp(`export const ${exportName}:.*?\\[([\\s\\S]*?)\\];`));
+  if (!match) return [];
+  const entries = match[1].match(/\{\s*id:\s*"([^"]+)"/g);
+  if (!entries) return [];
+  return entries.map(e => e.match(/id:\s*"([^"]+)"/)[1]);
+}
+
+const ids = {
+  news: extractIds("newsData"),
+  github: extractIds("githubProjects"),
+  tools: extractIds("aiTools"),
+  trends: extractIds("aiTrends"),
+};
+
+console.log(`  新闻: ${ids.news.length} 篇`);
+console.log(`  GitHub: ${ids.github.length} 个项目`);
+console.log(`  工具: ${ids.tools.length} 个`);
+console.log(`  趋势: ${ids.trends.length} 条\n`);
 
 const urls = [
   { loc: "/", priority: "1.0" },
   { loc: "/news", priority: "0.9" },
-  ...newsIds.map((id) => ({ loc: `/news/${id}`, priority: "0.7" })),
+  ...ids.news.map((id) => ({ loc: `/news/${id}`, priority: "0.7" })),
   { loc: "/github", priority: "0.9" },
-  ...githubIds.map((id) => ({ loc: `/github/${id}`, priority: "0.7" })),
+  ...ids.github.map((id) => ({ loc: `/github/${id}`, priority: "0.7" })),
   { loc: "/tools", priority: "0.9" },
-  ...toolIds.map((id) => ({ loc: `/tools/${id}`, priority: "0.7" })),
+  ...ids.tools.map((id) => ({ loc: `/tools/${id}`, priority: "0.7" })),
   { loc: "/trends", priority: "0.9" },
-  ...trendIds.map((id) => ({ loc: `/trends/${id}`, priority: "0.7" })),
+  ...ids.trends.map((id) => ({ loc: `/trends/${id}`, priority: "0.7" })),
 ];
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>

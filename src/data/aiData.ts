@@ -502,6 +502,83 @@ export const aiTools: AITool[] = [
     tags: ["全栈", "快速开发", "无代码"],
     isNew: true,
     isFree: true
+  },
+  {
+    id: "13",
+    name: "Ollama",
+    description: "Mac/Linux 上一条命令本地运行大模型，15 万 GitHub Stars",
+    content: "Ollama 是本地运行大语言模型最简单的方式，一条命令 `ollama run llama3` 即可在个人电脑上部署和运行各种开源模型。支持 Llama、Mistral、Gemma、DeepSeek 等主流开源模型，自动处理模型下载和资源配置。\n\n核心特性包括：一键运行任何开源 LLM、OpenAI 兼容 API、模型自定义和导入（如 GGUF）、同时加载多个模型。Ollama 降低了大模型的部署门槛，让个人开发者可以零成本实验和测试各种模型。\n\n适合需要本地运行 AI 模型的开发者、数据隐私敏感的用户和 AI 学习者。完全免费开源。",
+    category: "本地部署",
+    url: "https://ollama.ai",
+    logo: "🦙",
+    tags: ["开源", "本地", "LLM"],
+    isFree: true
+  },
+  {
+    id: "14",
+    name: "Dify",
+    description: "开源 LLM 应用开发平台，可视化编排 AI 工作流",
+    content: "Dify 是一款开源的 LLM 应用开发平台，提供可视化的 AI 应用编排工具，让开发者可以快速构建基于大语言模型的 AI 应用。支持多种模型接入、Prompt 管理、RAG 知识库、Agent 工作流等功能。\n\n核心功能包括：可视化 Workflow 编排、RAG 知识库搭建、模型统一管理（一次接入多个 LLM）、API 发布和监控。Dify 的云版本还提供团队协作功能。\n\n适合需要构建企业级 AI 应用的团队，以及希望快速验证 AI 产品原型的创业者。开源社区版免费使用。",
+    category: "开发平台",
+    url: "https://dify.ai",
+    logo: "🔧",
+    tags: ["开源", "工作流", "RAG"],
+    isFree: true
+  },
+  {
+    id: "15",
+    name: "Windsurf",
+    description: "AI-first 代码编辑器，Codeium 出品，流畅的智能编程体验",
+    content: "Windsurf 是 Codeium 推出的 AI-first 代码编辑器，对标 Cursor。基于 VS Code 架构，深度集成了 Codeium 的 AI 模型，提供代码补全、对话式编程、代码库理解等能力。\n\n核心功能包括：自动代码补全（Tab 补全）、自然语言对话编程、代码理解和重构、多文件编辑。Windsurf 的特色在于其极快的响应速度和流畅的交互体验，免费版功能强大。\n\n适合寻找 Cursor 替代方案的开发者，尤其是预算有限但需要高质量 AI 编程助手的个人开发者。提供慷慨的免费额度。",
+    category: "AI编程",
+    url: "https://windsurf.com",
+    logo: "🌊",
+    tags: ["编程", "IDE", "免费"],
+    isFree: true
+  },
+  {
+    id: "16",
+    name: "ComfyUI",
+    description: "节点式 AI 图像工作流工具，Stable Diffusion 高级玩法",
+    content: "ComfyUI 是一个基于节点的 AI 图像生成工作流工具，通过可视化节点拖拽搭建复杂的 AI 图像生成管线。它是 Stable Diffusion 社区最流行的前端工具，支持 ControlNet、LoRA、IP-Adapter 等几乎所有插件。\n\n核心功能包括：可视化节点编辑器（像 UE Blueprint 一样连接节点）、任意复杂的图像生成管线、精确控制每一步的参数、支持批量处理和视频帧处理。ComfyUI 的工作流可以保存和共享，社区积累了海量高质量工作流模板。\n\n适合对 AI 图像生成有深度控制需求的创作者，以及需要集成多个模型的输出管线。完全免费开源。",
+    category: "AI绘图",
+    url: "https://comfyui.org",
+    logo: "🕸️",
+    tags: ["图像", "节点", "开源"],
+    isFree: true
+  },
+  {
+    id: "17",
+    name: "Continue",
+    description: "开源的 AI 代码助手，自由接入任何 LLM 和代码库",
+    content: "Continue 是开源的 AI 编程助手 VS Code/JetBrains 插件，让你可以自由选择底层模型。可以接入 OpenAI、Anthropic、本地 Ollama、Azure OpenAI 等多种模型来源，数据完全掌控。\n\n核心功能包括：代码库级别对话（问关于整个项目的问题）、内联代码编辑（选中代码直接修改）、自定义 Slash 命令、自定义规则和上下文提供器。对于使用本地模型的用户，Continue 配合 Ollama 可以实现完全离线的 AI 编程体验。\n\n适合注重数据隐私的开发者、希望自定义 AI 编程体验的高级用户，以及想要接入自有模型的企业团队。完全免费开源。",
+    category: "AI编程",
+    url: "https://continue.dev",
+    logo: "▶️",
+    tags: ["编程", "开源", "插件"],
+    isFree: true
+  },
+  {
+    id: "18",
+    name: "Tabby",
+    description: "自托管的 AI 代码补全服务器，企业级隐私友好方案",
+    content: "Tabby 是一款自托管的 AI 代码补全服务，可部署在自己的服务器上，为团队提供无隐私泄露风险的 AI 编程辅助。与 GitHub Copilot 不同，所有代码数据不出公司网络。\n\n核心功能包括：自托管部署（Docker 一条命令启动）、代码补全和 Chat 功能、支持消费级 GPU（甚至 CPU-only 模式）、团队管理和审计日志。Tabby 模型针对代码补全场景进行了专门优化，响应速度快。\n\n适合对代码安全有严格要求的企业的团队，以及无法使用 Copilot（如金融、医疗行业）的开发者。完全开源，支持自托管。",
+    category: "AI编程",
+    url: "https://tabby.tabbyml.com",
+    logo: "🐱",
+    tags: ["编程", "自托管", "隐私"],
+    isFree: true
+  },
+  {
+    id: "19",
+    name: "Replit AI",
+    description: "浏览器内 AI 编程 + 部署一体化平台，Agent 模式自动编程",
+    content: "Replit 的 AI 编程功能将在线 IDE 与 AI Agent 深度整合。用户只需描述想要的功能，Replit Agent 就能自动编写代码、安装依赖、配置环境并部署上线。\n\n核心功能包括：AI Agent 自动编程（描述需求即可）、在线代码编辑和环境运行、一键部署到 Replit 托管、实时协作编程。Replit 的 Ghostwriter 功能提供智能代码补全和对话辅助。\n\n适合快速验证想法、学习编程的新手、以及需要快速搭建 MVP 的创业者。免费版即可使用 AI 功能，付费版解锁更多额度。",
+    category: "AI编程",
+    url: "https://replit.com",
+    logo: "🔄",
+    tags: ["编程", "在线", "Agent"],
+    isFree: true
   }
 ];
 
@@ -572,4 +649,4 @@ export const categories = ["全部", "大模型", "AI Agent", "开源模型", "A
 
 export const githubCategories = ["全部", "本地部署", "开发平台", "AI Agent", "开发框架", "RAG", "AI编程", "推理引擎", "AI绘图", "资源合集", "AI自动化", "AI界面"];
 
-export const toolCategories = ["全部", "对话AI", "AI编程", "图像生成", "视频生成", "AI搜索", "语音AI", "AI平台", "音乐AI"];
+export const toolCategories = ["全部", "对话AI", "AI编程", "本地部署", "开发平台", "图像生成", "视频生成", "AI搜索", "语音AI", "AI平台", "音乐AI"];
