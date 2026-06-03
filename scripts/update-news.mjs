@@ -89,6 +89,34 @@ async function fetchTechCrunchAI() {
   return items;
 }
 
+async function fetchArxivPapers() {
+  const cat = "cat:cs.AI+OR+cat:cs.CL+OR+cat:cs.LG";
+  const url = `https://export.arxiv.org/api/query?search_query=${cat}&sortBy=submittedDate&sortOrder=descending&max_results=20`;
+  const res = await fetch(url);
+  if (!res.ok) return [];
+  const xml = await res.text();
+
+  const entries = xml.split("<entry>").slice(1);
+  const results = [];
+
+  for (const entry of entries) {
+    const title = (entry.match(/<title[^>]*>([^<]+)<\/title>/) || [])[1]?.trim() || "";
+    const summary = (entry.match(/<summary[^>]*>([^<]+)<\/summary>/) || [])[1]?.trim() || "";
+    const link = (entry.match(/<id[^>]*>([^<]+)<\/id>/) || [])[1]?.trim() || "";
+    const published = (entry.match(/<published[^>]*>([^<]+)<\/published>/) || [])[1]?.trim() || "";
+
+    if (title && isAIRelated(title, summary)) {
+      results.push({
+        title: title.replace(/\s+/g, " "),
+        url: link,
+        summary: summary.replace(/\s+/g, " ").slice(0, 300),
+        date: published.slice(0, 10),
+      });
+    }
+  }
+  return results;
+}
+
 function deduplicate(items) {
   const seen = new Set();
   return items.filter(item => {
@@ -105,7 +133,7 @@ function generateNewsCode(news) {
     const title = item.title.replace(/"/g, '\\"');
     const summary = (item.summary || "").slice(0, 150).replace(/"/g, '\\"');
     const cat = classifyNews(title, summary);
-    const source = item.url?.includes("techcrunch") ? "TechCrunch" : "Hacker News";
+    const source = item.url?.includes("techcrunch") ? "TechCrunch" : item.url?.includes("arxiv") ? "Arxiv" : "Hacker News";
     const tags = [];
     if (title.toLowerCase().includes("gpt")) tags.push("GPT");
     if (title.toLowerCase().includes("openai")) tags.push("OpenAI");
@@ -151,7 +179,14 @@ async function main() {
   }
   console.log(`  → ${tcItems.length} 条 AI 相关`);
 
-  const news = deduplicate(allNews).slice(0, 15);
+  console.log("📡 抓取 Arxiv 最新 AI 论文...");
+  const arxivPapers = await fetchArxivPapers();
+  for (const p of arxivPapers) {
+    allNews.push(p);
+  }
+  console.log(`  → ${arxivPapers.length} 篇论文`);
+
+  const news = deduplicate(allNews).slice(0, 20);
   console.log(`\n📰 去重后: ${news.length} 条\n`);
 
   if (news.length === 0) {
