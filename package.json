@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && cp dist/index.html dist/404.html && node scripts/generate-sitemap.mjs",
+    "build": "node scripts/inject-seo.mjs && vite build && cp dist/index.html dist/404.html && node scripts/generate-sitemap.mjs",
     "preview": "vite preview",
     "update-all": "node scripts/update-content.mjs && node scripts/update-news.mjs"
   },
