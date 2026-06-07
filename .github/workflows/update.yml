@@ -26,9 +26,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - name: Update AI news
-        run: node scripts/update-news.mjs
-
       - name: Check for changes
         id: changes
         run: |
