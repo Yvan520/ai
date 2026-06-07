@@ -143,7 +143,7 @@ function generateNewsCode(news) {
     if (title.toLowerCase().includes("code") || title.toLowerCase().includes("program")) tags.push("编程");
     if (tags.length === 0) tags.push("AI");
     return `  {
-    id: "${String(Date.now())}-${i}",
+    id: "${i + 1}",
     title: "${title}",
     summary: "${summary}",
     content: "${summary}",

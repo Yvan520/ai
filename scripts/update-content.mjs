@@ -85,12 +85,13 @@ function categorizeAndBuild(repos) {
     grouped[cat].push(r);
   }
 
+  let idx = 1;
   const projects = [];
   for (const [cat, items] of Object.entries(grouped)) {
     items.sort((a, b) => b.stargazers_count - a.stargazers_count);
     items.forEach((r, i) => {
       projects.push({
-        id: `${Date.now()}-${projects.length}`,
+        id: `${idx++}`,
         name: r.name,
         fullName: r.full_name,
         description: (r.description || "").replace(/"/g, '\\"'),
