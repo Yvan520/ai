@@ -1,3 +1,14 @@
+
+export const categories: string[] = [
+  "AI Agent",
+  "AI应用",
+  "AI绘图",
+  "AI视频",
+  "基础科学",
+  "大模型",
+  "政策法规"
+];
+
 export const newsData: NewsItem[] = [
   {
     id: "1",
