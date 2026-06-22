@@ -212,8 +212,7 @@ export const newsData: NewsItem[] = [
     tags: ["Sanctuary AI", "具身智能", "制造业", "机器人", "精度"]
   }
 ,
-] = [
-  {
+{
     id: "13",
     title: "OpenAI 启动 ChatGPT 超级应用改造，整合代码编辑器与 AI Agent",
     summary: "OpenAI 正在对 ChatGPT 进行史上最大规模改造，计划将其转型为集成编程工具、AI Agent 和第三方服务的超级应用，为潜在上市做准备。",
