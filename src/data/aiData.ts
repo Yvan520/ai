@@ -211,7 +211,164 @@ export const newsData: NewsItem[] = [
     hot: false,
     tags: ["Sanctuary AI", "具身智能", "制造业", "机器人", "精度"]
   }
-];
+,
+] = [
+  {
+    id: "13",
+    title: "OpenAI 启动 ChatGPT 超级应用改造，整合代码编辑器与 AI Agent",
+    summary: "OpenAI 正在对 ChatGPT 进行史上最大规模改造，计划将其转型为集成编程工具、AI Agent 和第三方服务的超级应用，为潜在上市做准备。",
+    content: "据 Financial Times 六月报道，OpenAI 正在推进其史上规模最大的 ChatGPT 产品重组。内部知情人士透露，这次改造的核心是将 ChatGPT 与 Codex 编程工具和 Atlas 浏览器深度整合，打造一个超级应用——用户可以在同一个界面里写代码、浏览网页、调用 AI Agent 执行复杂任务。这个战略由 Greg Brockman 主导，目标是让 ChatGPT 从对话工具进化为完整的工作平台。重组计划还包括引入第三方应用生态，类似微信的小程序模式。消息传出后，行业分析师普遍认为这是 OpenAI 为其潜在 IPO 铺路。竞争对手 Anthropic 和 Google 也在加速各自的平台化布局，超级应用竞赛已全面打响。",
+    source: "Financial Times",
+    sourceUrl: "https://www.ft.com",
+    category: "大模型",
+    date: "2025-06-07",
+    readTime: "4 分钟",
+    hot: true,
+    tags: ["OpenAI", "ChatGPT", "超级应用", "Codex", "IPO"]
+  },
+  {
+    id: "14",
+    title: "Anthropic 发布 Claude Fable 5：首个公开可用的 Mythos 级模型",
+    summary: "Anthropic 推出 Claude Fable 5，这是首个面向公众的 Mythos 级模型，在编程、科研和知识工作领域刷新了多项基准测试记录。",
+    content: "6 月 9 日，Anthropic 正式发布了 Claude Fable 5，这是该公司迄今为止能力最强的公开可用模型。Fable 5 属于全新的 Mythos 层级，性能远超 Opus 系列。在 SWE-Bench Pro 编程基准上，Fable 5 得分 80.3%，比第二名 Claude Opus 4.8 高出约 11 个百分点，GPT-5.5 仅 58.6%。更令人印象深刻的是它的长上下文能力——默认支持 100 万 token 上下文窗口，在长时间复杂任务上的表现尤为突出。Stripe 使用 Fable 5 完成了一个 5000 万行 Ruby 代码库的迁移，耗时仅一天，而之前人工团队需要两个多月。不过 Anthropic 也承认，如此强大的模型存在被滥用于网络攻击的风险，因此加入了安全分类器，高风险查询会自动降级到 Opus 4.8 处理。",
+    source: "Anthropic",
+    sourceUrl: "https://anthropic.com",
+    category: "大模型",
+    date: "2025-06-09",
+    readTime: "5 分钟",
+    hot: true,
+    tags: ["Claude", "Fable 5", "Mythos", "Anthropic", "编程"]
+  },
+  {
+    id: "15",
+    title: "苹果 WWDC 2026 全面重构 Siri 搭载 Google Gemini，库克时代的最后亮相",
+    summary: "苹果在 WWDC 2026 上发布了全新 Siri AI，底层采用定制版 Google Gemini 模型，标志着苹果在 AI 战略上的重大转折，也是 Tim Cook 的告别演出。",
+    content: "6 月 8 日的 WWDC 2026 上，苹果终于交出了迟到两年的 AI 答卷。全新 Siri AI 不再是一个简单的语音助手，而是一个完整的对话式 AI 伴侣。最引人注目的是它的技术架构：苹果选择与 Google 合作，以每年约 10 亿美元的授权费使用定制版 Gemini 模型。简单请求由苹果自研端侧模型处理，复杂推理则上云到 Google 的 Blackwell B200 GPU 集群。新 Siri 拥有独立应用，支持多轮对话、屏幕内容理解、跨设备历史同步，还能处理图片和文件。iOS 27 将同步推送，但 Siri AI 需要 iPhone 15 Pro 及以上机型才能完整运行。欧盟和中国市场首发不支持云端 AI 功能。这是 Tim Cook 作为 CEO 的最后一届 WWDC，他将在 9 月交棒给硬件主管 John Ternus。",
+    source: "The Verge",
+    sourceUrl: "https://www.theverge.com",
+    category: "AI应用",
+    date: "2025-06-08",
+    readTime: "6 分钟",
+    hot: true,
+    tags: ["Apple", "Siri", "WWDC", "Gemini", "iOS 27"]
+  },
+  {
+    id: "16",
+    title: "Google I/O 2026：Gemini Omni 与 3.5 Flash 齐发，AI 进入操作系统时代",
+    summary: "Google 在 I/O 大会发布 Gemini Omni 视频生成模型和 Gemini 3.5 Flash，宣告 AI 已从对话工具进化为自主行动的平台级能力。",
+    content: "Google I/O 2026 可能是 Sundar Pichai 就任 CEO 以来产品密度最高的一次 keynote。Gemini Omni 是本次的主角——它不仅是文生图或视频工具，而是一个能够理解世界物理规律并基于视频进行创作和编辑的统一模型。与此同时，Gemini 3.5 Flash 作为新一代主力模型全面上线，定价仅为每百万 token 输入 1.5 美元、输出 9 美元，速度比竞品快 4 倍。Google 同时发布了 Antigravity 2.0 智能体开发平台，允许开发者用自然语言描述需求后自动生成多 Agent 协作应用。数据方面，Google 透露其 AI 系统每月处理超过 3.2 万亿 token，同比翻了七倍。Pichai 在演讲中反复强调：AI 不再是一个功能层，而是 Google 所有产品的操作系统级基础设施。",
+    source: "Google",
+    sourceUrl: "https://deepmind.google",
+    category: "大模型",
+    date: "2025-05-20",
+    readTime: "5 分钟",
+    hot: true,
+    tags: ["Google", "I/O", "Gemini", "Omni", "Agent"]
+  },
+  {
+    id: "17",
+    title: "NVIDIA Computex 2026：黄仁勋发布 Nemotron 3 Ultra，5500 亿参数开源模型登顶美国第一",
+    summary: "黄仁勋在台北 Computex 发布 5500 亿参数开源模型 Nemotron 3 Ultra，同时推出 Cosmos 3 全模态模型和 Vera CPU，宣告 NVIDIA 的平台化转型。",
+    content: "6 月 1 日，黄仁勋身着标志性皮夹克走上 Computex 2026 的舞台，但这次他讲的不是显卡而是模型。Nemotron 3 Ultra 拥有约 5500 亿总参数（每次激活仅 55 亿），支持 100 万 token 上下文，在 Artificial Analysis Intelligence Index 上以 48 分位列美国开源模型第一。推理速度超过每秒 300 token，比同尺寸竞品快 3 到 5 倍。但黄仁勋坦承这个成绩仍然落后于中国的 Kimi K2.6，开源模型的全球竞赛远未结束。NVIDIA 还发布了 Cosmos 3——业界首个全模态开源模型，统一处理语言、图像、视频、音频和动作生成，专为机器人领域设计。全新 Vera CPU 针对 AI Agent 推理负载进行了专门优化，效率是传统 x86 的两倍。黄仁勋表示 NVIDIA 已经不再是芯片公司，而是一家全栈 AI 平台企业。",
+    source: "NVIDIA",
+    sourceUrl: "https://nvidia.com",
+    category: "大模型",
+    date: "2025-06-01",
+    readTime: "5 分钟",
+    hot: true,
+    tags: ["NVIDIA", "Nemotron", "Computex", "开源", "黄仁勋"]
+  },
+  {
+    id: "18",
+    title: "中国 Neuracle NEO 脑机接口获批商用，全球首款侵入式 BCI 走进临床",
+    summary: "中国药监局批准 Neuracle NEO 脑机接口芯片上市，这是全球首个获批商用的侵入式脑机接口，已纳入医保加速推广。",
+    content: "今年 3 月，中国国家药监局批准了 Neuracle 科技与清华大学联合开发的 NEO 脑机接口系统用于临床商用，6 月该消息在全球科技媒体中引发广泛关注。NEO 是一枚硬币大小的植入式芯片，通过微创手术放置在硬脑膜表面，将脑电信号无线传输到外部的智能手套，帮助脊髓损伤患者恢复手部抓握能力。39 岁的临床试验参与者董辉因车祸导致颈部以下瘫痪六年，植入 NEO 11 个月后成功用手写下了自己的名字。MIT Technology Review 报道指出，与马斯克的 Neuralink 相比，NEO 选择了创伤更小的硬脑膜外路径，审批速度也更快。该芯片已被纳入中国医保编码体系。中国的十四五规划将脑机接口列为六大重点未来产业之一，这种国家层面的战略投入在全球没有对标。",
+    source: "MIT Technology Review",
+    sourceUrl: "https://technologyreview.com",
+    category: "基础科学",
+    date: "2025-06-01",
+    readTime: "6 分钟",
+    hot: true,
+    tags: ["脑机接口", "BCI", "中国", "NEO", "医疗AI"]
+  },
+  {
+    id: "19",
+    title: "Google DeepMind 斥资 1000 万美元研究多 Agent 系统安全风险",
+    summary: "随着 AI Agent 大规模部署上线，DeepMind 联合多家机构设立 1000 万美元研究基金，防范数百万自主 Agent 交互可能引发的系统性风险。",
+    content: "Google DeepMind 在 6 月宣布了一个引人注目的研究计划：联合 Schmidt Sciences、英国 ARIA、Cooperative AI 基金会和 Google.org，共同出资 1000 万美元，资助学术界研究多 AI Agent 系统的安全问题。DeepMind 的 AGI 安全与对齐研究负责人 Rohin Shah 在接受 MIT Technology Review 采访时说得很直白——目前还没有成体系的多 Agent 安全研究领域。他担心的是，当数百万个 AI Agent 开始在互联网上自主交互——互相下达指令、共享信息、协调行动——可能会出现谁也无法预料的系统性风险。在近期 Google I/O 上，智能体工具已经成为公司核心战略方向。Shah 强调学术界的优势是可以看得更远，做工业实验室不会优先考虑的基础性研究。这笔资金将专门用于支持大学和研究机构的独立研究。",
+    source: "MIT Technology Review",
+    sourceUrl: "https://technologyreview.com",
+    category: "政策法规",
+    date: "2025-06-11",
+    readTime: "4 分钟",
+    hot: false,
+    tags: ["DeepMind", "AI安全", "多Agent", "对齐"]
+  },
+  {
+    id: "20",
+    title: "Anthropic 秘密提交 9650 亿 IPO 申请，同步敲定 360 亿美元芯片融资",
+    summary: "Anthropic 在 Claude Fable 5 发布前夕向 SEC 秘密提交 IPO 文件，估值近万亿，同时 Apollo 和 Blackstone 正在完成史上最大 AI 芯片融资交易。",
+    content: "这是 AI 行业六月最重磅的资本新闻。消息人士透露，Anthropic 已向美国 SEC 秘密提交了 S-1 上市文件，估值高达 9650 亿美元，计划于 10 月正式上市。如果成功，这将是 2026 年规模最大的科技 IPO。几乎同时，Apollo 和 Blackstone 等华尔街巨头正在敲定一笔 360 亿美元的私人信贷交易，用于向 Google 购买 TPU 芯片并租赁给 Anthropic——这是历史上规模最大的芯片融资交易。这些动作反映出 AI 军备竞赛已经进入了资本层面的全面对抗。不过 Claude Fable 5 在 6 月 12 日因安全争议被短暂暂停访问，给 Anthropic 的上市计划增添了一丝不确定性。Anthropic 表示正在尽快恢复服务但拒绝透露具体原因。分析人士认为这可能是监管机构在为 IPO 做最后的压力测试。",
+    source: "Bloomberg",
+    sourceUrl: "https://bloomberg.com",
+    category: "大模型",
+    date: "2025-06-03",
+    readTime: "5 分钟",
+    hot: true,
+    tags: ["Anthropic", "IPO", "融资", "TPU", "估值"]
+  },
+  {
+    id: "21",
+    title: "Gemini 3.5 Live Translate 上线：AI 实时语音翻译保留语气和情感",
+    summary: "Google DeepMind 发布 Gemini 3.5 Live Translate，直接对语音信号进行端到端翻译，保留说话者语气情感，让跨语言交流真正自然。",
+    content: "Google DeepMind 在 6 月推出了 Gemini 3.5 Live Translate，这是一项让实时语音翻译变得真正可用的技术突破。不同于传统翻译工具逐句转换的生硬感，Gemini 3.5 Live Translate 能够理解上下文、保留说话者的语气和情感色彩，翻译结果听起来像是一个自然人在说话而不是机器在念稿。技术核心在于 Gemini 3.5 系列原生的音频理解能力：模型直接对语音信号进行端到端处理，而不是先转文字再翻译最后合成语音的传统流水线。这种架构大幅降低了延迟，同时保留了语调和情感细节。该功能首先在 Google Pixel 设备和 Gemini App 上线，支持中、英、日、韩、法、德等主要语言。这对于跨国会议、旅行和外语学习场景意义重大。很多在海外工作的华人第一时间测试了这个功能，反馈是终于可以和本地同事进行有温度的对话了。",
+    source: "Google DeepMind",
+    sourceUrl: "https://deepmind.google",
+    category: "AI应用",
+    date: "2025-06-09",
+    readTime: "4 分钟",
+    hot: false,
+    tags: ["Gemini", "翻译", "语音", "DeepMind", "多模态"]
+  },
+  {
+    id: "22",
+    title: "欧盟 AI 法案 6 月正式生效，全球首个全面 AI 监管框架落地",
+    summary: "欧盟 AI 法案进入执行阶段，按风险等级分类监管 AI 系统，高风险应用必须满足透明度、人工监督和文档记录等合规要求。",
+    content: "经过两年多的立法和过渡期，欧盟 AI 法案于 2026 年 6 月正式进入执行阶段。这是全球第一个全面的 AI 监管法律框架，将所有 AI 系统按风险等级分为四类：不可接受风险、高风险、有限风险和极低风险。高风险系统——涉及就业、信贷、教育、关键基础设施等领域的 AI——必须满足严格的透明度、文档记录、人工监督和准确性要求。法案还要求通用 AI 模型的提供者公开训练数据摘要并遵守版权法。欧洲之外的企业只要服务欧盟用户也必须遵守。许多科技公司从去年开始就在做准备，但中小企业的合规负担依然不小。欧盟委员会表示首批执法检查将从 9 月开始。行业普遍认为欧盟 AI 法案将为全球 AI 监管树立标杆，美国、日本和中国都在密切关注其执行效果。不过也有批评者认为过早过严的监管可能削弱欧洲 AI 产业的竞争力。",
+    source: "欧盟委员会",
+    sourceUrl: "https://digital-strategy.ec.europa.eu",
+    category: "政策法规",
+    date: "2025-06-01",
+    readTime: "5 分钟",
+    hot: false,
+    tags: ["欧盟", "AI监管", "合规", "法律"]
+  },
+  {
+    id: "23",
+    title: "Moonshot AI 开源编程模型 Kimi K2.7，推理 token 减少 30% 成本大降",
+    summary: "月之暗面发布开源编程模型 Kimi-K2.7-Code，通过减少过度推理降低 token 消耗，在多项基准上超越 Claude Opus 4.8。",
+    content: "6 月 12 日，中国 AI 初创公司 Moonshot AI 发布了 Kimi-K2.7-Code，一个专门针对编程任务优化的开源模型。它最大的亮点是可以停止过度思考——当 AI 推理一个问题时，会消耗大量 token 来生成中间推理步骤，K2.7 通过专门的训练将推理 token 用量减少了 30%，意味着更快的响应速度和更低的成本。在编程任务上表现提升 21.8%，多语言能力提升 31.5%。在工具使用基准测试中得分 81.1%，超过 Claude Opus 4.8 的 76.4%。API 输入仅每百万 token 0.95 美元，远低于竞品。模型权重完全开源，可在 Hugging Face 下载自托管。API 兼容 OpenAI 和 Anthropic 协议，开发者只需改一行代码即可切换。K2.7 在中国开发者社区迅速走红，被戏称为穷人的 Claude Fable。",
+    source: "Moonshot AI",
+    sourceUrl: "https://kimi.com",
+    category: "大模型",
+    date: "2025-06-12",
+    readTime: "3 分钟",
+    hot: false,
+    tags: ["Moonshot", "Kimi", "编程", "开源", "推理"]
+  },
+  {
+    id: "24",
+    title: "DeepMind 发布 Gemini for Science，AI 科学家助手正式上岗",
+    summary: "Google DeepMind 整合 AlphaFold、Co-Scientist 等工具推出 Gemini for Science，让 AI 从实验室玩具变为真正的科研生产力工具。",
+    content: "在 5 月 Google I/O 上发布后，Gemini for Science 在 6 月全面开放。这是一个将 DeepMind 多年积累的科学 AI 能力整合在一起的统一平台，涵盖 AlphaFold 蛋白质预测、AlphaProteo 蛋白质设计、AlphaQubit 量子计算纠错、GenCast 天气预报以及新加入的 Co-Scientist 协作研究助手。Co-Scientist 是其中最亮眼的新工具——它不是一个简单的问答 AI，而是可以自主提出研究假设、设计实验方案、分析结果并迭代优化的 AI 研究伙伴。早期用户包括剑桥大学的结构生物学团队和牛津的气候建模小组。DeepMind CEO Demis Hassabis 在采访中表示 Gemini for Science 的核心理念是让 AI 成为科学家的无限博士后——不知疲倦地阅读文献、设计实验、验证假设。他认为 2026 年将是 AI 从展示能力转向实际产出科学成果的关键转折年。这个工具对经费紧张的课题组尤其有用。",
+    source: "Google DeepMind",
+    sourceUrl: "https://deepmind.google",
+    category: "基础科学",
+    date: "2025-06-05",
+    readTime: "5 分钟",
+    hot: false,
+    tags: ["DeepMind", "科学研究", "AlphaFold", "Co-Scientist", "Hassabis"]
+  }];
 
 
 
