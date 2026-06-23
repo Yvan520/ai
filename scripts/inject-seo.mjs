@@ -62,7 +62,7 @@ function main() {
   }, null, 2);
 
   // --- Static HTML content for crawlers ---
-  const newsHtml = news.slice(0, 24).map(n =>
+  const newsHtml = news.slice(0, 27).map(n =>
     `<article><h3><a href="${SITE_URL}/news/${n.id}">${esc(n.title)}</a></h3><p><time>${n.date}</time> — ${esc(n.summary.slice(0, 300))}</p></article>`
   ).join("\n      ");
 
