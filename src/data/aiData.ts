@@ -367,7 +367,47 @@ export const newsData: NewsItem[] = [
     readTime: "5 分钟",
     hot: false,
     tags: ["DeepMind", "科学研究", "AlphaFold", "Co-Scientist", "Hassabis"]
-  }];
+  },
+  {
+    id: "25",
+    title: "美国政府下令封杀 Anthropic Claude Fable 5 和 Mythos 5，AI 模型出口管制进入新阶段",
+    summary: "美国商务部以国家安全为由，紧急发布出口管制指令，迫使 Anthropic 在全球范围内禁用刚刚发布三天的 Fable 5 和 Mythos 5 模型，引发行业震动。",
+    content: "6 月 12 日下午 5 点 21 分，Anthropic 收到了一封来自美国商务部的信函。信中援引国家安全法规，要求这家 AI 公司立即切断所有外国国民对其两款最强大模型——Claude Fable 5 和 Claude Mythos 5 的访问权限，包括 Anthropic 自己的外籍员工在内。由于技术上无法精确按国籍过滤用户，Anthropic 做出了一个前所未有的决定：在全球范围内完全禁用这两个模型。Fable 5 三天前刚刚高调发布，是 Anthropic 首次将 Mythos 级模型开放给普通用户，一时间整个开发者社区陷入混乱。API 调用返回 404，已经编写好的工作流当场失效。更令人震惊的内情在随后一周逐渐曝光：NSA 局长 Joshua Rudd 在参议院情报委员会听证会上透露，Mythos 5 在一次机密红队演习中，数小时内自主攻破了 NSA 几乎所有的机密系统。这不再是单纯的安全漏洞问题——该模型本身就具有国家级网络攻击能力。事件还导致一个讽刺场景：Anthropic 自家顶尖 AI 科学家 Andrej Karpathy 因非美国公民身份被禁止访问自己的模型。目前 Fable 5 和 Mythos 5 仍处于下线状态，白宫表示修复漏洞后可重新上线，但具体时间表未定。",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/06/12/anthropics-safety-warnings-may-have-just-backfired-the-government-has-pulled-the-plug-on-its-most-powerful-ai/",
+    category: "政策法规",
+    date: "2025-06-12",
+    readTime: "5 分钟",
+    hot: true,
+    tags: ["Anthropic", "Fable 5", "出口管制", "国家安全", "AI封杀"]
+  },
+  {
+    id: "26",
+    title: "Google 向 Anthropic 投资 400 亿美元：5GW 算力协议重塑 AI 军备竞赛格局",
+    summary: "Alphabet 宣布向 Anthropic 投入最高 400 亿美元并承诺 5GW 算力资源，以 3500 亿美元估值锁定 Claude 模型生态，直接挑战微软与 OpenAI 联盟。",
+    content: "4 月 24 日，Alphabet 与 Anthropic 正式宣布了一项史无前例的战略合作：Google 承诺向 Anthropic 投资最高 400 亿美元，并提供 5GW 的 TPU 算力资源，用于未来五年的 Claude 模型训练和推理。这笔交易分为 100 亿美元即时现金注入和 300 亿美元里程碑解锁资金，估值锚定在 3500 亿美元。400 亿美元这个数字本身已经刷新了 AI 领域单笔投资纪录，但真正让行业分析师反复咀嚼的是 5GW 算力这个条款——这相当于 Google 将其未来五年内相当一部分 TPU 产能直接预留给了 Anthropic。这意味着 Claude 系列将拥有几乎无限的训练算力，Anthropic 虽保持独立运营，但实际上已成为 Google 云计算生态中最核心的锚定客户。市场反应迅速：Alphabet 股价在公告当天上涨。作为 Anthropic 另一大投资方的 Amazon，此前的总体投资约 80 亿美元，在 Google 这一重注面前显得相形见绌。CNBC 评论认为，这笔交易标志着 AI 竞争已从模型能力之争全面升级为资本和算力基础设施的集团军对决。Anthropic 的 IPO 计划仍在推进，最早可能于 2026 年 10 月启动，预计募资超过 600 亿美元。",
+    source: "CNBC",
+    sourceUrl: "https://www.cnbc.com/2026/04/24/google-to-invest-up-to-40-billion-in-anthropic.html",
+    category: "大模型",
+    date: "2025-04-24",
+    readTime: "5 分钟",
+    hot: true,
+    tags: ["Google", "Anthropic", "投资", "算力", "AI军备竞赛"]
+  },
+  {
+    id: "27",
+    title: "2026 上半年 AI 裁员潮席卷全球：15 万人失业，企业用 AI 省下的钱都投向了 GPU",
+    summary: "超过 50 家公司以 AI 为由宣布裁员，上半年累计超 15 万人失去工作。创纪录的营收与创纪录的裁员同时发生，硅谷正在经历一场结构性大洗牌。",
+    content: "2026 年上半年，一场以 AI 为名的裁员潮席卷了整个科技行业。据多家监测机构统计，截至 6 月底，已有超过 50 家知名公司以人工智能为由宣布裁员，累计影响超过 15 万个岗位——这个数字是 2024 年全年的 8 倍以上。最引人注目的不是裁员规模本身，而是这些公司的财务数据：Oracle 全年营收增长 27%，净利润 70 亿美元，同时裁员 3 万人；Google Cloud 营收突破 200 亿美元，同时悄悄裁掉了安全团队和大量中层管理者；GitLab 营收增长 23%，CEO 一边宣布裁员 14%，一边说要花 3 到 3.5 亿美元做基础设施重构。Salesforce、Block、Snap、PayPal、Cloudflare、Coinbase 也在裁员名单上。Block 的 Jack Dorsey 裁员近半时直言：大多数公司在 AI 转型上都慢了，明年会有更多公司做出同样的结构性调整。这些裁员节省的人力成本并没有变成利润，而是被直接投入到了 AI 基础设施——GPU 集群和数据中心。Oracle 承诺投入 500 亿美元建设数据中心，GitLab 的裁员直接用于资助 AI 工作负载的基础设施升级。一个残酷的现实正在浮现：工作岗位正在被 GPU 取代。与此同时，Forbes 报道称约 29% 的公司在 AI 裁员后又重新招聘，因为他们发现 AI 并不能完全替代人的判断力。",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/06/22/the-running-list-major-tech-layoffs-in-2026-where-employers-cited-ai/",
+    category: "AI 应用",
+    date: "2025-06-22",
+    readTime: "6 分钟",
+    hot: true,
+    tags: ["裁员", "AI取代", "硅谷", "GPU", "劳动力市场"]
+  }
+];
 
 
 
