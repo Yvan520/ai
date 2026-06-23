@@ -62,19 +62,19 @@ function main() {
   }, null, 2);
 
   // --- Static HTML content for crawlers ---
-  const newsHtml = news.slice(0, 6).map(n =>
-    `<article><h3><a href="${SITE_URL}/news/${n.id}">${esc(n.title)}</a></h3><p><time>${n.date}</time> — ${esc(n.summary.slice(0, 120))}</p></article>`
+  const newsHtml = news.slice(0, 24).map(n =>
+    `<article><h3><a href="${SITE_URL}/news/${n.id}">${esc(n.title)}</a></h3><p><time>${n.date}</time> — ${esc(n.summary.slice(0, 300))}</p></article>`
   ).join("\n      ");
 
-  const githubHtml = github.slice(0, 6).map(g =>
+  const githubHtml = github.slice(0, 12).map(g =>
     `<li><a href="${SITE_URL}/github">${esc(g.name)}</a> ⭐ ${esc(g.stars)} — ${esc(g.description.slice(0, 80))}</li>`
   ).join("\n      ");
 
-  const toolsHtml = tools.slice(0, 4).map(t =>
+  const toolsHtml = tools.slice(0, 8).map(t =>
     `<li><strong>${esc(t.name)}</strong> [${esc(t.category)}]: ${esc(t.description.slice(0, 80))}</li>`
   ).join("\n      ");
 
-  const trendsHtml = trends.slice(0, 4).map(t =>
+  const trendsHtml = trends.slice(0, 8).map(t =>
     `<li><strong>${esc(t.title)}</strong> (${esc(t.stats)}): ${esc(t.description.slice(0, 80))}</li>`
   ).join("\n      ");
 
